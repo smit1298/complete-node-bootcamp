@@ -2,7 +2,7 @@ const fs = require('fs');
 const http = require('http');
 const url = require('url');
 const slugify = require('slugify');
-const replaceTemplate = require('./modules/replaceTemplate')
+const replaceTemplate = require('./module/replaceTemplate')
 
 
 ////////////////////////// FILES
@@ -32,7 +32,7 @@ const replaceTemplate = require('./modules/replaceTemplate')
 // console.log('will read file');
 
 ////////////////// SERVER  //////////////////
-
+const replaceTemplate = rep
 
 
 const tempOverview = fs.readFileSync(`${__dirname}/starter/templates/template-overview.html`, 'utf-8')
@@ -47,7 +47,7 @@ const server = http.createServer((req, res) => {
 
 
     // OVERVIEW page
-    if (pathname === '/' || pathname === "/overview") {
+    if (pathname === '/' || pathname === '/overview') {
         res.writeHead(200, { 'Content-type': 'text/html' })
 
         const cardsHtml = dataObj.map(el => replaceTemplate(tempCard, el)).join('');
